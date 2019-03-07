@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Taken from https://ddrscott.github.io/blog/2017/fzf-dictionary/
+
+# Default `fold` to screen width and break at spaces
+if [ $# -eq 0 ]; then
+    /usr/bin/fold -w $COLUMNS -s
+else
+    /usr/bin/fold $*
+fi

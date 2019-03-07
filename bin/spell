@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$1" = '-h' ] || [ "$1" = '--help' ]; then
+    echo 'spell takes no arguments
+    Use the 'WORDS_FILE' environment variable to set the dictionary'
+fi
+
+if [ -z "$WORDS_FILE" ]; then
+    WORDS_FILE="$(realpath $(dirname $(dirname $0))/words/words)"
+fi
+
+# Taken from https://ddrscott.github.io/blog/2017/fzf-dictionary/
+cat $WORDS_FILE | fzf --preview 'wn {} -over | fold' --preview-window=up:60%
