@@ -41,13 +41,16 @@ function! s:cap_reducer(words)
 endfunction
 
 
+let s:preview_arg = get(g:, 'fzf_wordnet_preview_arg', 'up:60%')
 let s:path = expand('<sfile>:p:h:h:h')
 function! fzf_wordnet#fn#Complete(...)
   let s:words_file = get(g:, 'words_file', s:path.'/words/words')
 
   return fzf#vim#complete(s:extend({
-        \ 'source':  'cat '.s:words_file,
-        \ 'options': ['-i', '--preview', s:path.'/bin/dic {}', '--preview-window=up:60%'],
+        \ 'source': 'cat '.s:words_file,
+        \ 'options': ['-i',
+        \             '--preview', s:path.'/bin/dic {}',
+        \             '--preview-window', s:preview_arg],
         \ 'reducer': function('<SID>cap_reducer')},
         \ get(a:000, 0, fzf#wrap())))
- endfunction
+endfunction
