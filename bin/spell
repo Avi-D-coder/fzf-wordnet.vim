@@ -9,7 +9,7 @@ if [ -z "$WORDS_FILE" ]; then
   WORDS_FILE="$(dirname $(realpath $0))/../words/words"
     # If words file does not exist, create it.
     if [ ! -f $WORDS_FILE ]; then
-      make -C $(dirname $WORDS_FILE) words
+      make -C $(dirname $WORDS_FILE) words > /dev/null 2>&1
     fi
 fi
 
