@@ -6,7 +6,8 @@ if [ "$1" = '-h' ] || [ "$1" = '--help' ]; then
 fi
 
 if [ -z "$WORDS_FILE" ]; then
-    WORDS_FILE="$(realpath $(dirname $(dirname $0))/words/words)"
+  # file comes from wamerican package on ubuntu
+  WORDS_FILE="/usr/share/dict/words"
 fi
 
 # Taken from https://ddrscott.github.io/blog/2017/fzf-dictionary/
