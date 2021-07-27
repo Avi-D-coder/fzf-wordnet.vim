@@ -25,6 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Install dependences
-        run: sudo apt install fzf wordnet
+        run: sudo apt install wordnet
       - name: tests build
         run: make -C words
