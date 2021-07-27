@@ -43,6 +43,7 @@ endfunction
 
 let s:preview_arg = get(g:, 'fzf_wordnet_preview_arg', 'up:60%')
 let s:path = expand('<sfile>:p:h:h:h')
+execute '!make -C '.s:path
 function! fzf_wordnet#fn#Complete(...)
   let s:words_file = get(g:, 'words_file', s:path.'/words/words')
 
