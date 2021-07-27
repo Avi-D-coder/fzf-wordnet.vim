@@ -1,5 +1,6 @@
 # fzf-wordnet
 [![CI](https://github.com/CTHULHU-Jesus/fzf-wordnet.vim/actions/workflows/main.yml/badge.svg)](https://github.com/CTHULHU-Jesus/fzf-wordnet.vim/actions/workflows/main.yml)
+
 Dictionary completion powered by FZF and Wordnet for vim and your terminal.
 
 ## Vim/NeoVim
