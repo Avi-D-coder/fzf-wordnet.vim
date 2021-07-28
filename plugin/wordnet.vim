@@ -1,7 +1,5 @@
 inoremap <expr> <plug>(fzf-complete-wordnet) fzf_wordnet#fn#Complete()
 
-silent! system('make -C '.expand('<sfile>:p:h:h').'/words')
-
 function! OpenSpell(word)
   :vsplit term://~/.vim/plugged/fzf-wordnet.vim/bin/spell
   call feedkeys("i".a:word)

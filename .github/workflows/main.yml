@@ -27,4 +27,15 @@ jobs:
       - name: Install dependences
         run: sudo apt install wordnet
       - name: tests build
-        run: make -C words
+        run: make -C words clean all
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add words/words
+          git commit -m "BOT: Built Words File"
+      - name: Push changes to repo
+        uses: ad-m/github-push-action@master
+        with:
+          repository: ${{github.repository}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}

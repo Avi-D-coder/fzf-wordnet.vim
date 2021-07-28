@@ -6,11 +6,7 @@ if [ "$1" = '-h' ] || [ "$1" = '--help' ]; then
 fi
 
 if [ -z "$WORDS_FILE" ]; then
-  WORDS_FILE="$(dirname $(realpath $0))/../words/words"
-    # If words file does not exist, create it.
-    if [ ! -f $WORDS_FILE ]; then
-      make -C $(dirname $WORDS_FILE) words > /dev/null 2>&1
-    fi
+  WORDS_FILE="$(dirname $(dirname $(realpath $0)))/words/words"
 fi
 
 # Taken from https://ddrscott.github.io/blog/2017/fzf-dictionary/
