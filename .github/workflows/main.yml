@@ -33,7 +33,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add words/words
-          git commit -m "BOT: Built Words File"
+          git commit -m "BOT: Built Words File" || true
       - name: Push changes to repo
         uses: ad-m/github-push-action@master
         with:
