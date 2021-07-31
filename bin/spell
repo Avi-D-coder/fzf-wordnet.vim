@@ -6,7 +6,7 @@ if [ "$1" = '-h' ] || [ "$1" = '--help' ]; then
 fi
 
 if [ -z "$WORDS_FILE" ]; then
-    WORDS_FILE="$(realpath $(dirname $(dirname $0))/words/words)"
+  WORDS_FILE="$(dirname $(dirname $(realpath $0)))/words/words"
 fi
 
 # Taken from https://ddrscott.github.io/blog/2017/fzf-dictionary/
